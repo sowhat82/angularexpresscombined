@@ -20,6 +20,11 @@ app.use(morgan('combined'))
 
 
 // resources
+
+// serve frontend
+app.use(express.static ( __dirname + '/projectdayfront'))
+
+
 // GET api/cookie 
 
 app.get('/api/cookie', cors(), async (req, resp) => {
@@ -40,9 +45,6 @@ app.get('/api/cookie', cors(), async (req, resp) => {
     
             resp.json(displayArray)
     }
-
-// serve frontend
-app.use(express.static ( __dirname + '/projectdayfront'))
 
 
 })
